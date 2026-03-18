@@ -15,13 +15,13 @@ const DATE_PATTERNS = [
   /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
 ]
 
-const ID_PATTERNS = [/_id$|^id$|_key$|^key$|_code$|^code$|_uuid$|^uuid$/i]
-const REGION_PATTERNS = [/region|country|state|city|location|territory|area|zone|market|geo/i]
-const PAYMENT_PATTERNS = [/payment|method|pay_type|transaction_type|mode|channel/i]
-const RATING_PATTERNS = [/rating|score|stars|review|satisfaction|nps|grade/i]
-const DISCOUNT_PATTERNS = [/discount|coupon|promo|reduction|off|deal/i]
-const REVENUE_PATTERNS = [/revenue|sales|amount|total|price|value|cost|profit|gmv|income/i]
-const QTY_PATTERNS = [/qty|quantity|units|count|volume|sold|orders/i]
+const ID_PATTERNS = /_id$|^id$|_key$|^key$|_code$|^code$|_uuid$|^uuid$/i
+const REGION_PATTERNS = /region|country|state|city|location|territory|area|zone|market|geo/i
+const PAYMENT_PATTERNS = /payment|method|pay_type|transaction_type|mode|channel/i
+const RATING_PATTERNS = /rating|score|stars|review|satisfaction|nps|grade/i
+const DISCOUNT_PATTERNS = /discount|coupon|promo|reduction|off|deal/i
+const REVENUE_PATTERNS = /revenue|sales|amount|total|price|value|cost|profit|gmv|income/i
+const QTY_PATTERNS = /qty|quantity|units|count|volume|sold|orders/i
 
 // ─── Detect single column type ────────────────────────────────────────────────
 export function detectColumnType(
@@ -32,7 +32,7 @@ export function detectColumnType(
   if (!nonNull.length) return 'text'
 
   // ID check by name first
-  if (ID_PATTERNS.some(p => p.test(name))) return 'id'
+  if (ID_PATTERNS.test(name)) return 'id'
 
   // Check if all are numeric
   const numericCount = nonNull.filter(v => !isNaN(Number(v))).length
@@ -144,7 +144,7 @@ export function scorePrimaryDimension(profiles: ColumnProfile[]): string {
     if (REGION_PATTERNS.test(p.name)) score += 40
     if (PAYMENT_PATTERNS.test(p.name)) score += 30
     // ID cols score low
-    if (ID_PATTERNS.some(p2 => p2.test(p.name))) score -= 100
+    if (ID_PATTERNS.test(p.name)) score -= 100
     return { name: p.name, score }
   })
 
