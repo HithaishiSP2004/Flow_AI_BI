@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///E:/Educational/College/MCA/hackethon/GFG/flow_final4/flow-next-v2/src/app/layout.tsx"],"sourcesContent":["import type { Metadata } from 'next'\nimport './globals.css'\n\nexport const metadata: Metadata = {\n  title: 'FLOW — AI Business Intelligence',\n  description: 'Ask your data anything. Get instant charts and insights.',\n}\n\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <html lang=\"en\" data-theme=\"dark\" suppressHydrationWarning>\n      <body suppressHydrationWarning>{children}</body>\n    </html>\n  )\n}\n"],"names":[],"mappings":";;;;;;;;;AAGO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,WAAW,EAAE,QAAQ,EAAiC;IAC5E,qBACE,8OAAC;QAAK,MAAK;QAAK,cAAW;QAAO,wBAAwB;kBACxD,cAAA,8OAAC;YAAK,wBAAwB;sBAAE;;;;;;;;;;;AAGtC"}},
+    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///E:/Educational/College/MCA/hackethon/GFG/flow_final4/flow-next-v2/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}
