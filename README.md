@@ -109,10 +109,7 @@ When you upload **any CSV file**, FLOW:
 | Engine | Model | Key Env Var |
 |--------|-------|------------|
 | Gemini (default) | gemini-2.0-flash | `GEMINI_API_KEY` |
-| OpenAI | gpt-4o-mini | `OPENAI_API_KEY` |
-| Claude | claude-haiku | `ANTHROPIC_API_KEY` |
 
-You only need **one key** to use FLOW. Gemini is free tier.
 
 ---
 
